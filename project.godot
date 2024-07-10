@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Godot Project Base"
+config/name_localized={
+"en": "Game",
+"ru": "Игра"
+}
+config/version="0.0.1"
+run/main_scene="res://_core/components/root_scene/root_scene.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="%APPDATA%\\[project_name]"
+config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://_core/assets/images/game_logo/eternity_logo.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/always_on_top=true
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/nv.file_system/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
