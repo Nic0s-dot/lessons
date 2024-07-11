@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bw71b2mowdxa3"]
+[gd_scene load_steps=3 format=3 uid="uid://bw71b2mowdxa3"]
+
+[ext_resource type="Script" path="res://_core/components/root_scene/Button.gd" id="1_tggwo"]
+[ext_resource type="Script" path="res://_core/components/root_scene/quit_button.gd" id="2_o8r3q"]
 
 [node name="RootScene" type="Node"]
 
@@ -10,4 +13,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Button" type="Button" parent="ui"]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 282.0
+offset_right = 741.0
+offset_bottom = 375.0
+script = ExtResource("1_tggwo")
+
+[node name="LineEdit" type="LineEdit" parent="ui"]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 124.0
+offset_right = 858.0
+offset_bottom = 155.0
+
+[node name="quit_button" type="Button" parent="ui"]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 81.0
+text = "Quit"
+script = ExtResource("2_o8r3q")
+
 [node name="scenes" type="Node3D" parent="."]
+
+[connection signal="pressed" from="ui/Button" to="ui/Button" method="_on_pressed"]
+[connection signal="pressed" from="ui/quit_button" to="ui/quit_button" method="_on_pressed"]
