@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw71b2mowdxa3"]
+[gd_scene load_steps=2 format=3 uid="uid://bw71b2mowdxa3"]
 
-[ext_resource type="Script" path="res://_core/components/root_scene/Button.gd" id="1_tggwo"]
-[ext_resource type="Script" path="res://_core/components/root_scene/quit_button.gd" id="2_o8r3q"]
+[ext_resource type="Script" path="res://_core/components/root_scene/lesson3.gd" id="1_yyry2"]
 
 [node name="RootScene" type="Node"]
+
+[node name="scenes" type="Node3D" parent="."]
 
 [node name="ui" type="Control" parent="."]
 layout_mode = 3
@@ -13,29 +14,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="ui"]
-layout_mode = 0
-offset_left = 451.0
-offset_top = 282.0
-offset_right = 741.0
-offset_bottom = 375.0
-script = ExtResource("1_tggwo")
+[node name="lesson3" type="VBoxContainer" parent="ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yyry2")
 
-[node name="LineEdit" type="LineEdit" parent="ui"]
-layout_mode = 0
-offset_left = 323.0
-offset_top = 124.0
-offset_right = 858.0
-offset_bottom = 155.0
+[node name="Label" type="Label" parent="ui/lesson3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="quit_button" type="Button" parent="ui"]
-layout_mode = 0
-offset_right = 85.0
-offset_bottom = 81.0
-text = "Quit"
-script = ExtResource("2_o8r3q")
+[node name="LineEdit" type="LineEdit" parent="ui/lesson3"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
 
-[node name="scenes" type="Node3D" parent="."]
+[node name="Button" type="Button" parent="ui/lesson3"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[connection signal="pressed" from="ui/Button" to="ui/Button" method="_on_pressed"]
-[connection signal="pressed" from="ui/quit_button" to="ui/quit_button" method="_on_pressed"]
+[connection signal="pressed" from="ui/lesson3/Button" to="ui/lesson3" method="_on_button_pressed"]
