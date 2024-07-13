@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u1us5"]
 
 [node name="Player" type="CharacterBody3D"]
+visible = false
 script = ExtResource("1_raxhw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

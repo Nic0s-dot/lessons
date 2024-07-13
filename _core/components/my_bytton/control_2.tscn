@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://dbojabuc5cb8i"]
+[gd_scene load_steps=5 format=3 uid="uid://dbojabuc5cb8i"]
+
+[ext_resource type="Script" path="res://_core/components/my_bytton/Button.gd" id="1_xylwu"]
+[ext_resource type="Script" path="res://_core/components/my_bytton/Button_quit.gd" id="2_ly1hc"]
+[ext_resource type="Script" path="res://_core/components/my_bytton/Button2.gd" id="2_r5syk"]
+[ext_resource type="Script" path="res://_core/components/my_bytton/Button3.gd" id="3_wxw51"]
 
 [node name="Control2" type="Control"]
 layout_mode = 3
@@ -8,16 +13,85 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -393.0
+offset_top = 42.0
+offset_right = 404.0
+offset_bottom = 137.0
+grow_horizontal = 2
+
+[node name="Button1" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -265.0
-offset_top = -60.0
-offset_right = 318.0
-offset_bottom = 61.0
+offset_left = -297.0
+offset_top = -162.0
+offset_right = 286.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "1"
+script = ExtResource("1_xylwu")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = -11.0
+offset_right = 289.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+script = ExtResource("2_r5syk")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = 143.0
+offset_right = 287.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+script = ExtResource("3_wxw51")
+
+[node name="Button_quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -633.0
+offset_top = 252.0
+offset_right = -511.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "quit"
+script = ExtResource("2_ly1hc")
+
+[connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button_quit" to="Button_quit" method="_on_pressed"]
