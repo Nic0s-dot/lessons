@@ -1,6 +1,4 @@
 extends Button
 
-@onready var line_edit = $"../LineEdit"
-
-func _on_pressed():
-	SystemSpecs.header(line_edit.text, "pink")
+func _add_a_scene_manually():
+	get_tree().change_scene_to_file("res://_core/components/my_bytton/control_2.tscn")

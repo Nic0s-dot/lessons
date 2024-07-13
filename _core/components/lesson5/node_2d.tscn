@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://nbib8b01r2dn"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_37prg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri3j5"]
+size = Vector2(86.5, 103)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o7gxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca547"]
+size = Vector2(1387.5, 46)
+
+[sub_resource type="BoxMesh" id="BoxMesh_74lop"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_37prg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(177, 482)
+shape = SubResource("RectangleShape2D_ri3j5")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+position = Vector2(173, 479)
+scale = Vector2(61.25, 63.75)
+mesh = SubResource("BoxMesh_o7gxs")
+
+[node name="Node2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(638, 645)
+shape = SubResource("RectangleShape2D_ca547")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D"]
+position = Vector2(615, 646)
+scale = Vector2(1327.5, 34.625)
+mesh = SubResource("BoxMesh_74lop")

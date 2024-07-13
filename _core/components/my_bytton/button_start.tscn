@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2kkis5l43keo"]
+
+[ext_resource type="Script" path="res://_core/components/root_scene/Button.gd" id="1_qukjt"]
+
+[node name="button_start" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 542.0
+offset_top = 258.0
+offset_right = 724.0
+offset_bottom = 395.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qukjt")

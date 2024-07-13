@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcuiv4t0wx5xi"]
+
+[ext_resource type="Script" path="res://_core/components/lesson5/control.gd" id="1_rdi7v"]
+[ext_resource type="Script" path="res://_core/components/lesson5/area.gd" id="2_4xg8c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro8ql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdo1i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sla73"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf730"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yx2a"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rdi7v")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -81.0
+offset_right = 136.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Вы хотите выйти?"
+
+[node name="area" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 492.0
+offset_top = 492.0
+offset_right = -500.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4xg8c")
+
+[node name="Button" type="Button" parent="area"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -19.5
+offset_right = 72.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ro8ql")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdo1i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sla73")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vf730")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7yx2a")
+text = "Потвердить"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="area" to="area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="area" method="_on_mouse_exited"]
+[connection signal="pressed" from="area/Button" to="area" method="_on_button_pressed"]

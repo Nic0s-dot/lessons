@@ -1,42 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw71b2mowdxa3"]
+[gd_scene load_steps=4 format=3 uid="uid://bw71b2mowdxa3"]
 
-[ext_resource type="Script" path="res://_core/components/root_scene/lesson3.gd" id="1_yyry2"]
+[ext_resource type="PackedScene" uid="uid://dudnnc3eby22d" path="res://_core/components/lesson4/ui.tscn" id="1_vpmgo"]
+[ext_resource type="PackedScene" uid="uid://1j18emrubld6" path="res://_core/components/my_bytton/control.tscn" id="2_3p1yp"]
+[ext_resource type="PackedScene" uid="uid://dbojabuc5cb8i" path="res://_core/components/my_bytton/control_2.tscn" id="3_jy80l"]
 
 [node name="RootScene" type="Node"]
 
 [node name="scenes" type="Node3D" parent="."]
 
-[node name="ui" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ui" parent="." instance=ExtResource("1_vpmgo")]
+visible = false
 
-[node name="lesson3" type="VBoxContainer" parent="ui"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_yyry2")
+[node name="Control" parent="." instance=ExtResource("2_3p1yp")]
+visible = false
 
-[node name="Label" type="Label" parent="ui/lesson3"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 100
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LineEdit" type="LineEdit" parent="ui/lesson3"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Button" type="Button" parent="ui/lesson3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[connection signal="pressed" from="ui/lesson3/Button" to="ui/lesson3" method="_on_button_pressed"]
+[node name="Control2" parent="." instance=ExtResource("3_jy80l")]
+visible = false

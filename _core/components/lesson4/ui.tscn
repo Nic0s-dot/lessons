@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dudnnc3eby22d"]
+
+[ext_resource type="Script" path="res://_core/components/root_scene/lesson3.gd" id="1_eo0ko"]
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lesson3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eo0ko")
+
+[node name="Label" type="Label" parent="lesson3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="lesson3"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Button" type="Button" parent="lesson3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="lesson3/Button" to="lesson3" method="_on_button_pressed"]
